@@ -1,0 +1,64 @@
+---
+title       : Developing Data Products
+subtitle    : Coursera
+author      : Alexander Leznar
+job         : Student
+framework   : io2012
+logo		: coursera_logo.png # Automatically searches through the img dir
+highlighter : highlight.js
+hitheme     : tomorrow
+widgets     : [mathjax, bootstrap, quiz, shiny, interactive]
+mode        : selfcontained
+---
+
+## Introduction
+
+This presentation will provide a brief overview about my Shiny application
+that I created for the Coursera course called Developing Data Products.
+
+If you would like to download these slides for future reference, please visit
+my github at https://github.com/xeggsy/Coursera-DDP/tree/slidify 
+
+---
+
+## Description
+
+My application hosted at ShinyApps.io (https://xeggsy.shinyapps.io/shiny/) 
+allows a user to browse the trees dataset (from the package "datasets") in various 
+interesting ways:
+
+* it is possible to view all the different attributes of the data
+* it support various charts for presenting the data
+* it reports on several useful statistics concerning the data
+
+---
+
+## How to DIY?
+
+After having downladed all the code from my Github repository, simply execute the
+following commands (within an R environment of course!):
+
+**Slidify**
+```
+library(slidify)
+slidify('index.Rmd')
+browseURL('index.html')
+```
+
+<br>
+
+**Shiny** 
+```
+setwd('<directory_containing_the_files>')
+runApp()
+```
+
+---
+
+## Example Plot
+
+```{r, echo = FALSE}
+library(datasets)
+data(trees)
+hist(trees$Height, xlab = 'Height', col = 'lightblue', main = '#Black Cherry trees relative to their height')
+```
